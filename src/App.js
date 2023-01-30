@@ -1,24 +1,25 @@
-import logo from './logo.svg';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
+import Header from './Components/Header';
+import TrainingPlanList from "./Components/TrainingPlanList";
+import ListExercises from "./Pages/ListExercises";
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={
+              <div>
+                <Header name="WorkoutApp" links ={["Planos", "Treinos"]}></Header>
+                <TrainingPlanList />
+              </div>
+        }/>
+        <Route path="/training/:id" element={<ListExercises />}/>
+        <Route path="*" element={<>404 NotFound</>}/>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
