@@ -59,7 +59,7 @@ function TrainingPlanList(){
                         <div className="flex flex-col justify-between p-4 leading-normal">
                             <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{list.training.title}</h5>
                             <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{list.training.description}</p>
-                            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">Duração: {list.training.duration} likes: {list.training.likes} comments: {list.training.comments}</p>
+                            <p className="mb-3 font-normal text-gray-700 dark:text-gray-400">{list.training.durationMinutes}m likes: {list.training.likes} comments: {list.training.comments}</p>
                         </div>
                     </a>
                 </li>
