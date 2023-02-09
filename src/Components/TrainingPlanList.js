@@ -50,7 +50,7 @@ function TrainingPlanList(){
             }
             </ul>
         </div>
-        <div>
+        <div className="grid justify-center">
             <ul>
             {listTrainingPlanTraining.map((list, index) => 
                 <li key={index} className="flex flex-col space-y-1 m-4">
