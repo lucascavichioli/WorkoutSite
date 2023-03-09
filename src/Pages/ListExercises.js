@@ -6,7 +6,7 @@ import Api from '../Services/Api';
 function ListExercises(){
 
     const [exercises, setExercises] = useState([]);
-    const { id } = useParams();
+    const { id, idTrainingPlanTraining } = useParams();
     
     const [checkedState, setCheckedState] = useState(
         new Array(exercises.length).fill(false)
@@ -55,7 +55,6 @@ function ListExercises(){
 
             if(localStorage.getItem(trainingStr) == "[]")
                 localStorage.removeItem(trainingStr);
-
         }
     }
 
@@ -115,7 +114,7 @@ function ListExercises(){
                                     {list.sets}
                                 </div>
                                 <div class="flex items-center mr-4">
-                                    <input checked={verifyLog(list.trainingFK, list.exercisesFK)} id={'checkbox-'+index} type="checkbox" onChange={() => handleOnChange(index)} onClick={() => save(index, list.trainingFK, list.exercisesFK)} class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
+                                    <input checked={verifyLog(idTrainingPlanTraining, list.id)} id={'checkbox-'+index} type="checkbox" onChange={() => handleOnChange(index)} onClick={() => save(index, idTrainingPlanTraining, list.id)} class="w-4 h-4 text-green-600 bg-gray-100 border-gray-300 rounded focus:ring-green-500 dark:focus:ring-green-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" />
                                 </div>
                             </div>
                         </li>
